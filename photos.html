@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的相册 - 小明的个人空间</title>
+    <style>
+        body {
+            background-color: #ccccff;
+            font-family: "宋体", SimSun, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-image: url('https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/stars_background.gif');
+        }
+        
+        #container {
+            width: 780px;
+            margin: 0 auto;
+            text-align: left;
+            border: 2px solid #9999cc;
+            background-color: white;
+        }
+        
+        #header {
+            background-color: #9999ff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 3px solid #6666cc;
+        }
+        
+        #navigation {
+            background-color: #ccccff;
+            padding: 5px;
+            text-align: center;
+            border-bottom: 1px solid #9999cc;
+        }
+        
+        #navigation a {
+            color: #6666cc;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        
+        #navigation a:hover {
+            text-decoration: underline;
+            color: #ff6699;
+        }
+        
+        #content {
+            padding: 15px;
+        }
+        
+        .album {
+            margin-bottom: 30px;
+        }
+        
+        .album-title {
+            background-color: #9999ff;
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .album-description {
+            background-color: #eeeeff;
+            padding: 5px 10px;
+            font-style: italic;
+            border-left: 1px solid #9999cc;
+            border-right: 1px solid #9999cc;
+        }
+        
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            background-color: #f8f8ff;
+            border: 1px solid #9999cc;
+        }
+        
+        .photo-item {
+            margin: 5px;
+            border: 1px solid #9999cc;
+            padding: 3px;
+            background-color: white;
+            width: 150px;
+            text-align: center;
+        }
+        
+        .photo-item img {
+            width: 140px;
+            height: 105px;
+            border: 1px solid #cccccc;
+        }
+        
+        .photo-caption {
+            font-size: 0.8em;
+            margin-top: 3px;
+            color: #666666;
+        }
+        
+        #footer {
+            background-color: #9999ff;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            font-size: 0.8em;
+            border-top: 3px solid #6666cc;
+        }
+        
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+        
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+        
+        .new-label {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #ff6699;
+            color: white;
+            font-size: 0.7em;
+            padding: 2px 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>✿ 小明的个人空间 ✿</h1>
+            <marquee scrollamount="3" direction="left">欢迎来到我的相册！这里收藏着我的美好回忆~ <script>document.write(new Date().toLocaleDateString())</script></marquee>
+        </div>
+        
+        <div id="navigation">
+            <a href="index.html">首页</a> |
+            <a href="diary.html">日记</a> |
+            <a href="photos.html">相册</a> |
+            <a href="music.html">音乐</a> |
+            <a href="friends.html">好友</a> |
+            <a href="guestbook.html">留言板</a>
+        </div>
+        
+        <div id="content">
+            <h2>我的相册集 <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/camera.gif" alt="相机" width="30"></h2>
+            
+            <div class="album">
+                <div class="album-title">暑假海边之旅 <span class="blink" style="font-size: 0.8em;">NEW!</span></div>
+                <div class="album-description">2023年7月 - 和朋友们一起去海边度过了愉快的三天！</div>
+                <div class="photo-gallery">
+                    <div class="photo-item" style="position: relative;">
+                        <span class="new-label">NEW</span>
+                        <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/beach1.jpg" alt="海边日落">
+                        <div class="photo-caption">美丽的日落</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/beach2.jpg" alt="沙滩排球">
+                        <div class="photo-caption">沙滩排球比赛</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/beach3.jpg" alt="海边烧烤">
+                        <div class="photo-caption">晚上的烧烤派对</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/beach4.jpg" alt="贝壳收集">
+                        <div class="photo-caption">收集的漂亮贝壳</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/beach5.jpg" alt="冲浪">
+                        <div class="photo-caption">第一次尝试冲浪</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/beach6.jpg" alt="合影">
+                        <div class="photo-caption">大家的合影</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="album">
+                <div class="album-title">我的校园生活</div>
+                <div class="album-description">2023年春季学期 - 记录校园里的点点滴滴</div>
+                <div class="photo-gallery">
+                    <div class="photo-item">
+                        <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/school1.jpg" alt="教室">
+                        <div class="photo-caption">我们的教室</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/school2.jpg" alt="操场">
+                        <div class="photo-caption">阳光下的操场</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/school3.jpg" alt="图书馆">
+                        <div class="photo-caption">安静的图书馆</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/school4.jpg" alt="篮球赛">
+                        <div class="photo-caption">班级篮球赛</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/school5.jpg" alt="春游">
+                        <div class="photo-caption">春游野餐</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/school6.jpg" alt="实验室">
+                        <div class="photo-caption">化学实验课</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="album">
+                <div class="album-title">我的宠物猫咪</div>
+                <div class="album-description">我可爱的小猫咪"球球"的日常</div>
+                <div class="photo-gallery">
+                    <div class="photo-item">
+                        <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/cat1.jpg" alt="睡觉的猫">
+                        <div class="photo-caption">午睡时间</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/cat2.jpg" alt="玩毛线">
+                        <div class="photo-caption">玩毛线球</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/cat3.jpg" alt="吃饭">
+                        <div class="photo-caption">吃饭时间</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/cat4.jpg" alt="窗台">
+                        <div class="photo-caption">窗台上晒太阳</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="#">查看更多相册 &raquo;</a>
+            </div>
+        </div>
+        
+        <div id="footer">
+            <p>
+                小明的个人空间 &copy; 2023 版权所有 | 推荐使用IE6浏览器 1024x768分辨率浏览
+            </p>
+            <p>
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/ie_logo.gif" alt="IE" width="20">
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/netscape_logo.gif" alt="Netscape" width="20">
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/html_valid.gif" alt="HTML Valid" width="20">
+            </p>
+        </div>
+    </div>
+</body>
+</html> 

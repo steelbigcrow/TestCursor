@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的音乐 - 小明的个人空间</title>
+    <style>
+        body {
+            background-color: #ccccff;
+            font-family: "宋体", SimSun, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-image: url('https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/stars_background.gif');
+        }
+        
+        #container {
+            width: 780px;
+            margin: 0 auto;
+            text-align: left;
+            border: 2px solid #9999cc;
+            background-color: white;
+        }
+        
+        #header {
+            background-color: #9999ff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 3px solid #6666cc;
+        }
+        
+        #navigation {
+            background-color: #ccccff;
+            padding: 5px;
+            text-align: center;
+            border-bottom: 1px solid #9999cc;
+        }
+        
+        #navigation a {
+            color: #6666cc;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        
+        #navigation a:hover {
+            text-decoration: underline;
+            color: #ff6699;
+        }
+        
+        #content {
+            padding: 15px;
+        }
+        
+        .music-player {
+            background-color: #eeeeff;
+            border: 1px solid #9999cc;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .music-list {
+            margin-top: 20px;
+        }
+        
+        .music-category {
+            margin-bottom: 20px;
+        }
+        
+        .category-title {
+            background-color: #9999ff;
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+        
+        .song-item {
+            padding: 8px;
+            border-bottom: 1px dotted #9999cc;
+        }
+        
+        .song-item:nth-child(odd) {
+            background-color: #f8f8ff;
+        }
+        
+        .song-title {
+            font-weight: bold;
+            color: #6666cc;
+        }
+        
+        .song-artist {
+            color: #666666;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+        
+        .song-controls {
+            float: right;
+        }
+        
+        .song-controls a {
+            margin-left: 5px;
+            text-decoration: none;
+            color: #6666cc;
+        }
+        
+        #footer {
+            background-color: #9999ff;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            font-size: 0.8em;
+            border-top: 3px solid #6666cc;
+        }
+        
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+        
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+        
+        .now-playing {
+            background-color: #ffccff;
+            border: 1px dashed #ff6699;
+            padding: 5px;
+            margin-top: 10px;
+            font-style: italic;
+            color: #ff3399;
+        }
+        
+        .music-mood {
+            margin-top: 20px;
+            border: 1px solid #9999cc;
+            padding: 10px;
+            background-color: #f8f8ff;
+        }
+        
+        .mood-title {
+            font-weight: bold;
+            color: #6666cc;
+            margin-bottom: 5px;
+        }
+        
+        .mood-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .mood-item {
+            margin: 5px;
+            padding: 3px 8px;
+            background-color: #eeeeff;
+            border: 1px solid #9999cc;
+            border-radius: 10px;
+        }
+        
+        .mood-item:hover {
+            background-color: #9999ff;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>✿ 小明的个人空间 ✿</h1>
+            <marquee scrollamount="3" direction="left">欢迎来到我的音乐盒！这里有我最喜欢的歌曲~ <script>document.write(new Date().toLocaleDateString())</script></marquee>
+        </div>
+        
+        <div id="navigation">
+            <a href="index.html">首页</a> |
+            <a href="diary.html">日记</a> |
+            <a href="photos.html">相册</a> |
+            <a href="music.html">音乐</a> |
+            <a href="friends.html">好友</a> |
+            <a href="guestbook.html">留言板</a>
+        </div>
+        
+        <div id="content">
+            <h2>我的音乐收藏 <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/music.gif" alt="音乐" width="30"></h2>
+            
+            <div class="music-player">
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/winamp.gif" alt="音乐播放器" width="350">
+                <div class="now-playing">
+                    正在播放: 周杰伦 - 七里香
+                </div>
+            </div>
+            
+            <div class="music-mood">
+                <div class="mood-title">按心情选择音乐:</div>
+                <div class="mood-list">
+                    <div class="mood-item">开心</div>
+                    <div class="mood-item">伤感</div>
+                    <div class="mood-item">浪漫</div>
+                    <div class="mood-item">励志</div>
+                    <div class="mood-item">放松</div>
+                    <div class="mood-item">怀旧</div>
+                    <div class="mood-item">活力</div>
+                    <div class="mood-item">思念</div>
+                </div>
+            </div>
+            
+            <div class="music-list">
+                <div class="music-category">
+                    <div class="category-title">华语流行 <span class="blink" style="font-size: 0.8em;">HOT!</span></div>
+                    <div class="song-item">
+                        <span class="song-title">七里香</span>
+                        <span class="song-artist">- 周杰伦</span>
+                        <span class="song-controls">
+                            <a href="#">播放</a> |
+                            <a href="#">下载</a> |
+                            <a href="#">收藏</a>
+                        </span>
+                    </div>
+                    <div class="song-item">
+                        <span class="song-title">青花瓷</span>
+                        <span class="song-artist">- 周杰伦</span>
+                        <span class="song-controls">
+                            <a href="#">播放</a> |
+                            <a href="#">下载</a> |
+                            <a href="#">收藏</a>
+                        </span>
+                    </div>
+                    <div class="song-item">
+                        <span class="song-title">稻香</span>
+                        <span class="song-artist">- 周杰伦</span>
+                        <span class="song-controls">
+                            <a href="#">播放</a> |
+                            <a href="#">下载</a> |
+                            <a href="#">收藏</a>
+                        </span>
+                    </div>
+                    <div class="song-item">
+                        <span class="song-title">夜曲</span>
+                        <span class="song-artist">- 周杰伦</span>
+                        <span class="song-controls">
+                            <a href="#">播放</a> |
+                            <a href="#">下载</a> |
+                            <a href="#">收藏</a>
+                        </span>
+                    </div>
+                    <div class="song-item">
+                        <span class="song-title">后来</span>
+                        <span class="song-artist">- 刘若英</span>
+                        <span class="song-controls">
+                            <a href="#">播放</a> |
+                            <a href="#">下载</a> |
+                            <a href="#">收藏</a>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="music-category">
+                    <div class="category-title">欧美金曲</div>
+                    <div class="song-item">
+                        <span class="song-title">My Heart Will Go On</span>
+                        <span class="song-artist">- Celine Dion</span>
+                        <span class="song-controls">
+                            <a href="#">播放</a> |
+                            <a href="#">下载</a> |
+                            <a href="#">收藏</a>
+                        </span>
+                    </div>
+                    <div class="song-item">
+                        <span class="song-title">Yesterday Once More</span>
+                        <span class="song-artist">- The Carpenters</span>
+                        <span class="song-controls">
+                            <a href="#">播放</a> |
+                            <a href="#">下载</a> |
+                            <a href="#">收藏</a>
+                        </span>
+                    </div>
+                    <div class="song-item">
+                        <span class="song-title">Love Story</span>
+                        <span class="song-artist">- Taylor Swift</span>
+                        <span class="song-controls">
+                            <a href="#">播放</a> |
+                            <a href="#">下载</a> |
+                            <a href="#">收藏</a>
+                        </span>
+                    </div>
+                    <div class="song-item">
+                        <span class="song-title">Just The Way You Are</span>
+                        <span class="song-artist">- Bruno Mars</span>
+                        <span class="song-controls">
+                            <a href="#">播放</a> |
+                            <a href="#">下载</a> |
+                            <a href="#">收藏</a>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="music-category">
+                    <div class="category-title">日韩歌曲</div>
+                    <div class="song-item">
+                        <span class="song-title">樱花树下</span>
+                        <span class="song-artist">- 李知恩</span>
+                        <span class="song-controls">
+                            <a href="#">播放</a> |
+                            <a href="#">下载</a> |
+                            <a href="#">收藏</a>
+                        </span>
+                    </div>
+                    <div class="song-item">
+                        <span class="song-title">First Love</span>
+                        <span class="song-artist">- 宇多田光</span>
+                        <span class="song-controls">
+                            <a href="#">播放</a> |
+                            <a href="#">下载</a> |
+                            <a href="#">收藏</a>
+                        </span>
+                    </div>
+                    <div class="song-item">
+                        <span class="song-title">Gee</span>
+                        <span class="song-artist">- 少女时代</span>
+                        <span class="song-controls">
+                            <a href="#">播放</a> |
+                            <a href="#">下载</a> |
+                            <a href="#">收藏</a>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="music-category">
+                    <div class="category-title">我的最爱 <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/heart.gif" alt="心" width="15"></div>
+                    <div class="song-item">
+                        <span class="song-title">七里香</span>
+                        <span class="song-artist">- 周杰伦</span>
+                        <span class="song-controls">
+                            <a href="#">播放</a> |
+                            <a href="#">下载</a> |
+                            <a href="#">收藏</a>
+                        </span>
+                    </div>
+                    <div class="song-item">
+                        <span class="song-title">My Heart Will Go On</span>
+                        <span class="song-artist">- Celine Dion</span>
+                        <span class="song-controls">
+                            <a href="#">播放</a> |
+                            <a href="#">下载</a> |
+                            <a href="#">收藏</a>
+                        </span>
+                    </div>
+                    <div class="song-item">
+                        <span class="song-title">后来</span>
+                        <span class="song-artist">- 刘若英</span>
+                        <span class="song-controls">
+                            <a href="#">播放</a> |
+                            <a href="#">下载</a> |
+                            <a href="#">收藏</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px; border-top: 1px dashed #9999cc; padding-top: 10px;">
+                <p>音乐是我生活中不可或缺的一部分，希望你也能喜欢这些歌曲！</p>
+                <p>如果你有好听的歌曲推荐，请在<a href="guestbook.html">留言板</a>告诉我哦~</p>
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/music_notes.gif" alt="音符" width="100">
+            </div>
+        </div>
+        
+        <div id="footer">
+            <p>
+                小明的个人空间 &copy; 2023 版权所有 | 推荐使用IE6浏览器 1024x768分辨率浏览
+            </p>
+            <p>
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/ie_logo.gif" alt="IE" width="20">
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/netscape_logo.gif" alt="Netscape" width="20">
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/html_valid.gif" alt="HTML Valid" width="20">
+            </p>
+        </div>
+    </div>
+</body>
+</html>

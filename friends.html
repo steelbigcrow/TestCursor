@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的好友 - 小明的个人空间</title>
+    <style>
+        body {
+            background-color: #ccccff;
+            font-family: "宋体", SimSun, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-image: url('https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/stars_background.gif');
+        }
+        
+        #container {
+            width: 780px;
+            margin: 0 auto;
+            text-align: left;
+            border: 2px solid #9999cc;
+            background-color: white;
+        }
+        
+        #header {
+            background-color: #9999ff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 3px solid #6666cc;
+        }
+        
+        #navigation {
+            background-color: #ccccff;
+            padding: 5px;
+            text-align: center;
+            border-bottom: 1px solid #9999cc;
+        }
+        
+        #navigation a {
+            color: #6666cc;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        
+        #navigation a:hover {
+            text-decoration: underline;
+            color: #ff6699;
+        }
+        
+        #content {
+            padding: 15px;
+        }
+        
+        .friend-category {
+            margin-bottom: 25px;
+        }
+        
+        .category-title {
+            background-color: #9999ff;
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .friend-list {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            background-color: #f8f8ff;
+            border: 1px solid #9999cc;
+        }
+        
+        .friend-item {
+            width: 170px;
+            margin: 10px;
+            border: 1px solid #9999cc;
+            padding: 8px;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .friend-avatar {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #cccccc;
+            padding: 3px;
+            margin-bottom: 5px;
+        }
+        
+        .friend-name {
+            font-weight: bold;
+            color: #6666cc;
+            margin-bottom: 3px;
+        }
+        
+        .friend-info {
+            font-size: 0.8em;
+            color: #666666;
+            margin-bottom: 5px;
+        }
+        
+        .friend-action {
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+        
+        .friend-action a {
+            color: #6666cc;
+            text-decoration: none;
+            margin: 0 3px;
+        }
+        
+        .friend-action a:hover {
+            text-decoration: underline;
+            color: #ff6699;
+        }
+        
+        .friend-status {
+            font-size: 0.8em;
+            color: #009900;
+            margin-top: 3px;
+        }
+        
+        .offline {
+            color: #999999;
+        }
+        
+        #footer {
+            background-color: #9999ff;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            font-size: 0.8em;
+            border-top: 3px solid #6666cc;
+        }
+        
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+        
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+        
+        .friend-search {
+            background-color: #eeeeff;
+            border: 1px solid #9999cc;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .friend-search input[type="text"] {
+            width: 200px;
+            padding: 3px;
+            border: 1px solid #9999cc;
+        }
+        
+        .friend-search input[type="button"] {
+            background-color: #9999ff;
+            color: white;
+            border: 1px solid #6666cc;
+            padding: 3px 10px;
+            cursor: pointer;
+        }
+        
+        .new-label {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #ff6699;
+            color: white;
+            font-size: 0.7em;
+            padding: 2px 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>✿ 小明的个人空间 ✿</h1>
+            <marquee scrollamount="3" direction="left">欢迎来到我的好友列表！这里有我最珍贵的朋友们~ <script>document.write(new Date().toLocaleDateString())</script></marquee>
+        </div>
+        
+        <div id="navigation">
+            <a href="index.html">首页</a> |
+            <a href="diary.html">日记</a> |
+            <a href="photos.html">相册</a> |
+            <a href="music.html">音乐</a> |
+            <a href="friends.html">好友</a> |
+            <a href="guestbook.html">留言板</a>
+        </div>
+        
+        <div id="content">
+            <h2>我的好友列表 <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/friends.gif" alt="好友" width="30"></h2>
+            
+            <div class="friend-search">
+                <form action="#" method="get">
+                    <input type="text" name="search" placeholder="输入好友名称搜索...">
+                    <input type="button" value="搜索">
+                    <input type="button" value="添加好友">
+                </form>
+            </div>
+            
+            <div class="friend-category">
+                <div class="category-title">特别好友 <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/star.gif" alt="星星" width="15"></div>
+                <div class="friend-list">
+                    <div class="friend-item" style="position: relative;">
+                        <span class="new-label">NEW</span>
+                        <img class="friend-avatar" src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/avatar1.jpg" alt="小红">
+                        <div class="friend-name">小红</div>
+                        <div class="friend-info">18岁 | 女生</div>
+                        <div class="friend-info">最近登录: 今天</div>
+                        <div class="friend-status">在线</div>
+                        <div class="friend-action">
+                            <a href="#">留言</a> |
+                            <a href="#">送礼物</a> |
+                            <a href="#">聊天</a>
+                        </div>
+                    </div>
+                    
+                    <div class="friend-item">
+                        <img class="friend-avatar" src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/avatar2.jpg" alt="阿强">
+                        <div class="friend-name">阿强</div>
+                        <div class="friend-info">19岁 | 男生</div>
+                        <div class="friend-info">最近登录: 昨天</div>
+                        <div class="friend-status offline">离线</div>
+                        <div class="friend-action">
+                            <a href="#">留言</a> |
+                            <a href="#">送礼物</a> |
+                            <a href="#">聊天</a>
+                        </div>
+                    </div>
+                    
+                    <div class="friend-item">
+                        <img class="friend-avatar" src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/avatar3.jpg" alt="丽丽">
+                        <div class="friend-name">丽丽</div>
+                        <div class="friend-info">18岁 | 女生</div>
+                        <div class="friend-info">最近登录: 今天</div>
+                        <div class="friend-status">在线</div>
+                        <div class="friend-action">
+                            <a href="#">留言</a> |
+                            <a href="#">送礼物</a> |
+                            <a href="#">聊天</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="friend-category">
+                <div class="category-title">同学</div>
+                <div class="friend-list">
+                    <div class="friend-item">
+                        <img class="friend-avatar" src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/avatar4.jpg" alt="大壮">
+                        <div class="friend-name">大壮</div>
+                        <div class="friend-info">19岁 | 男生</div>
+                        <div class="friend-info">最近登录: 3天前</div>
+                        <div class="friend-status offline">离线</div>
+                        <div class="friend-action">
+                            <a href="#">留言</a> |
+                            <a href="#">送礼物</a> |
+                            <a href="#">聊天</a>
+                        </div>
+                    </div>
+                    
+                    <div class="friend-item">
+                        <img class="friend-avatar" src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/avatar5.jpg" alt="小芳">
+                        <div class="friend-name">小芳</div>
+                        <div class="friend-info">18岁 | 女生</div>
+                        <div class="friend-info">最近登录: 今天</div>
+                        <div class="friend-status">在线</div>
+                        <div class="friend-action">
+                            <a href="#">留言</a> |
+                            <a href="#">送礼物</a> |
+                            <a href="#">聊天</a>
+                        </div>
+                    </div>
+                    
+                    <div class="friend-item">
+                        <img class="friend-avatar" src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/avatar6.jpg" alt="小明">
+                        <div class="friend-name">小明</div>
+                        <div class="friend-info">18岁 | 男生</div>
+                        <div class="friend-info">最近登录: 昨天</div>
+                        <div class="friend-status offline">离线</div>
+                        <div class="friend-action">
+                            <a href="#">留言</a> |
+                            <a href="#">送礼物</a> |
+                            <a href="#">聊天</a>
+                        </div>
+                    </div>
+                    
+                    <div class="friend-item">
+                        <img class="friend-avatar" src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/avatar7.jpg" alt="小李">
+                        <div class="friend-name">小李</div>
+                        <div class="friend-info">19岁 | 男生</div>
+                        <div class="friend-info">最近登录: 5天前</div>
+                        <div class="friend-status offline">离线</div>
+                        <div class="friend-action">
+                            <a href="#">留言</a> |
+                            <a href="#">送礼物</a> |
+                            <a href="#">聊天</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="friend-category">
+                <div class="category-title">网友</div>
+                <div class="friend-list">
+                    <div class="friend-item">
+                        <img class="friend-avatar" src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/avatar8.jpg" alt="阳光">
+                        <div class="friend-name">阳光</div>
+                        <div class="friend-info">20岁 | 男生</div>
+                        <div class="friend-info">最近登录: 今天</div>
+                        <div class="friend-status">在线</div>
+                        <div class="friend-action">
+                            <a href="#">留言</a> |
+                            <a href="#">送礼物</a> |
+                            <a href="#">聊天</a>
+                        </div>
+                    </div>
+                    
+                    <div class="friend-item">
+                        <img class="friend-avatar" src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/avatar9.jpg" alt="雨滴">
+                        <div class="friend-name">雨滴</div>
+                        <div class="friend-info">17岁 | 女生</div>
+                        <div class="friend-info">最近登录: 昨天</div>
+                        <div class="friend-status offline">离线</div>
+                        <div class="friend-action">
+                            <a href="#">留言</a> |
+                            <a href="#">送礼物</a> |
+                            <a href="#">聊天</a>
+                        </div>
+                    </div>
+                    
+                    <div class="friend-item">
+                        <img class="friend-avatar" src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/avatar10.jpg" alt="星空">
+                        <div class="friend-name">星空</div>
+                        <div class="friend-info">21岁 | 男生</div>
+                        <div class="friend-info">最近登录: 1周前</div>
+                        <div class="friend-status offline">离线</div>
+                        <div class="friend-action">
+                            <a href="#">留言</a> |
+                            <a href="#">送礼物</a> |
+                            <a href="#">聊天</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px; border-top: 1px dashed #9999cc; padding-top: 10px;">
+                <p>朋友是人生中最珍贵的财富，感谢有你们的陪伴！</p>
+                <p>想成为我的好友？请点击上方的"添加好友"按钮~</p>
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/friendship.gif" alt="友谊" width="100">
+            </div>
+        </div>
+        
+        <div id="footer">
+            <p>
+                小明的个人空间 &copy; 2023 版权所有 | 推荐使用IE6浏览器 1024x768分辨率浏览
+            </p>
+            <p>
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/ie_logo.gif" alt="IE" width="20">
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/netscape_logo.gif" alt="Netscape" width="20">
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/html_valid.gif" alt="HTML Valid" width="20">
+            </p>
+        </div>
+    </div>
+</body>
+</html> 

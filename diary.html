@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的日记 - 小明的个人空间</title>
+    <style>
+        body {
+            background-color: #ccccff;
+            font-family: "宋体", SimSun, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-image: url('https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/stars_background.gif');
+        }
+        
+        #container {
+            width: 780px;
+            margin: 0 auto;
+            text-align: left;
+            border: 2px solid #9999cc;
+            background-color: white;
+        }
+        
+        #header {
+            background-color: #9999ff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 3px solid #6666cc;
+        }
+        
+        #navigation {
+            background-color: #ccccff;
+            padding: 5px;
+            text-align: center;
+            border-bottom: 1px solid #9999cc;
+        }
+        
+        #navigation a {
+            color: #6666cc;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        
+        #navigation a:hover {
+            text-decoration: underline;
+            color: #ff6699;
+        }
+        
+        #content {
+            padding: 15px;
+        }
+        
+        .diary-entry {
+            margin-bottom: 25px;
+            border: 1px dashed #9999cc;
+            padding: 10px;
+            background-color: #f8f8ff;
+        }
+        
+        .diary-date {
+            background-color: #9999ff;
+            color: white;
+            padding: 3px 8px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .diary-mood {
+            float: right;
+            font-style: italic;
+            color: #ff6699;
+        }
+        
+        .diary-content {
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+        
+        #footer {
+            background-color: #9999ff;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            font-size: 0.8em;
+            border-top: 3px solid #6666cc;
+        }
+        
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+        
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+        
+        .pagination {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .pagination a {
+            border: 1px solid #9999cc;
+            padding: 3px 8px;
+            margin: 0 3px;
+            text-decoration: none;
+            color: #6666cc;
+            background-color: #eeeeff;
+        }
+        
+        .pagination a:hover {
+            background-color: #9999ff;
+            color: white;
+        }
+        
+        .current-page {
+            border: 1px solid #9999cc;
+            padding: 3px 8px;
+            margin: 0 3px;
+            background-color: #9999ff;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>✿ 小明的个人空间 ✿</h1>
+            <marquee scrollamount="3" direction="left">欢迎来到我的日记本！这里记录着我的点点滴滴~ <script>document.write(new Date().toLocaleDateString())</script></marquee>
+        </div>
+        
+        <div id="navigation">
+            <a href="index.html">首页</a> |
+            <a href="diary.html">日记</a> |
+            <a href="photos.html">相册</a> |
+            <a href="music.html">音乐</a> |
+            <a href="friends.html">好友</a> |
+            <a href="guestbook.html">留言板</a>
+        </div>
+        
+        <div id="content">
+            <h2>我的心情日记 <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/diary.gif" alt="日记" width="30"></h2>
+            
+            <div class="diary-entry">
+                <div class="diary-date">2023年7月18日 星期二</div>
+                <div class="diary-mood">心情：开心 ^_^</div>
+                <div style="clear: both;"></div>
+                <div class="diary-content">
+                    <p>今天天气超好，和朋友们一起去了游乐园！玩了过山车和鬼屋，虽然有点害怕但是很刺激！中午吃了超大的冰淇淋，下午又去了电影院看了新上映的动作片。</p>
+                    <p>晚上回家的路上，看到了美丽的晚霞，拍了好多照片。今天真是充实的一天！</p>
+                    <div style="text-align: right;">
+                        <a href="#">评论 (3)</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="diary-entry">
+                <div class="diary-date">2023年7月15日 星期六</div>
+                <div class="diary-mood">心情：郁闷 -_-</div>
+                <div style="clear: both;"></div>
+                <div class="diary-content">
+                    <p>今天下雨了，原本计划的野餐只能取消。在家里看了一整天的电视剧，追完了《请回答1988》，真的很感人！</p>
+                    <p>妈妈做了我最爱吃的红烧肉，心情稍微好了一点。希望明天天气能好起来~</p>
+                    <div style="text-align: right;">
+                        <a href="#">评论 (5)</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="diary-entry">
+                <div class="diary-date">2023年7月10日 星期一</div>
+                <div class="diary-mood">心情：兴奋 *_*</div>
+                <div style="clear: both;"></div>
+                <div class="diary-content">
+                    <p>今天收到了期待已久的周杰伦新专辑！一整天都在循环播放，真的太好听了！最喜欢第三首歌，旋律超级棒。</p>
+                    <p>下午去书店买了几本新书，准备暑假慢慢看。晚上和家人一起吃了火锅，超级满足~</p>
+                    <div style="text-align: right;">
+                        <a href="#">评论 (8)</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="diary-entry">
+                <div class="diary-date">2023年7月5日 星期三</div>
+                <div class="diary-mood">心情：激动 ^o^</div>
+                <div style="clear: both;"></div>
+                <div class="diary-content">
+                    <p>终于买到了梦寐以求的相机！存了好久的钱终于派上用场了。拿到相机的那一刻，感觉所有的等待都是值得的。</p>
+                    <p>迫不及待地拍了好多照片，虽然技术还不太好，但是会慢慢学习的！希望能拍出漂亮的照片~</p>
+                    <div style="text-align: right;">
+                        <a href="#">评论 (12)</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <a href="#">&lt;&lt;</a>
+                <a href="#">&lt;</a>
+                <span class="current-page">1</span>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">&gt;</a>
+                <a href="#">&gt;&gt;</a>
+            </div>
+        </div>
+        
+        <div id="footer">
+            <p>
+                小明的个人空间 &copy; 2023 版权所有 | 推荐使用IE6浏览器 1024x768分辨率浏览
+            </p>
+            <p>
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/ie_logo.gif" alt="IE" width="20">
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/netscape_logo.gif" alt="Netscape" width="20">
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/html_valid.gif" alt="HTML Valid" width="20">
+            </p>
+        </div>
+    </div>
+</body>
+</html> 

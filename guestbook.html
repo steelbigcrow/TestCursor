@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>留言板 - 小明的个人空间</title>
+    <style>
+        body {
+            background-color: #ccccff;
+            font-family: "宋体", SimSun, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-image: url('https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/stars_background.gif');
+        }
+        
+        #container {
+            width: 780px;
+            margin: 0 auto;
+            text-align: left;
+            border: 2px solid #9999cc;
+            background-color: white;
+        }
+        
+        #header {
+            background-color: #9999ff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 3px solid #6666cc;
+        }
+        
+        #navigation {
+            background-color: #ccccff;
+            padding: 5px;
+            text-align: center;
+            border-bottom: 1px solid #9999cc;
+        }
+        
+        #navigation a {
+            color: #6666cc;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        
+        #navigation a:hover {
+            text-decoration: underline;
+            color: #ff6699;
+        }
+        
+        #content {
+            padding: 15px;
+        }
+        
+        .message-form {
+            background-color: #eeeeff;
+            border: 1px solid #9999cc;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .form-title {
+            font-weight: bold;
+            color: #6666cc;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #9999cc;
+            padding-bottom: 5px;
+        }
+        
+        .form-row {
+            margin-bottom: 10px;
+        }
+        
+        .form-label {
+            display: inline-block;
+            width: 80px;
+            text-align: right;
+            margin-right: 10px;
+            color: #666666;
+        }
+        
+        .form-input {
+            width: 200px;
+            padding: 3px;
+            border: 1px solid #9999cc;
+        }
+        
+        .form-textarea {
+            width: 500px;
+            height: 100px;
+            padding: 3px;
+            border: 1px solid #9999cc;
+        }
+        
+        .form-button {
+            background-color: #9999ff;
+            color: white;
+            border: 1px solid #6666cc;
+            padding: 3px 15px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        
+        .message-list {
+            margin-top: 20px;
+        }
+        
+        .message-item {
+            margin-bottom: 20px;
+            border: 1px solid #9999cc;
+        }
+        
+        .message-header {
+            background-color: #eeeeff;
+            padding: 5px 10px;
+            border-bottom: 1px solid #9999cc;
+        }
+        
+        .message-avatar {
+            float: left;
+            width: 50px;
+            height: 50px;
+            border: 1px solid #cccccc;
+            padding: 2px;
+            margin-right: 10px;
+        }
+        
+        .message-info {
+            float: left;
+        }
+        
+        .message-author {
+            font-weight: bold;
+            color: #6666cc;
+        }
+        
+        .message-time {
+            font-size: 0.8em;
+            color: #666666;
+        }
+        
+        .message-content {
+            padding: 10px;
+            line-height: 1.5;
+            clear: both;
+        }
+        
+        .message-footer {
+            background-color: #f8f8ff;
+            padding: 5px 10px;
+            border-top: 1px dashed #9999cc;
+            text-align: right;
+            font-size: 0.8em;
+        }
+        
+        .message-footer a {
+            color: #6666cc;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        
+        .message-footer a:hover {
+            text-decoration: underline;
+            color: #ff6699;
+        }
+        
+        .message-reply {
+            margin: 10px;
+            padding: 10px;
+            background-color: #f8f8ff;
+            border: 1px dashed #9999cc;
+            font-size: 0.9em;
+        }
+        
+        .reply-author {
+            color: #ff6699;
+            font-weight: bold;
+        }
+        
+        #footer {
+            background-color: #9999ff;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            font-size: 0.8em;
+            border-top: 3px solid #6666cc;
+        }
+        
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+        
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+        
+        .pagination {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .pagination a {
+            border: 1px solid #9999cc;
+            padding: 3px 8px;
+            margin: 0 3px;
+            text-decoration: none;
+            color: #6666cc;
+            background-color: #eeeeff;
+        }
+        
+        .pagination a:hover {
+            background-color: #9999ff;
+            color: white;
+        }
+        
+        .current-page {
+            border: 1px solid #9999cc;
+            padding: 3px 8px;
+            margin: 0 3px;
+            background-color: #9999ff;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .message-new {
+            background-color: #ffeeee;
+        }
+        
+        .mood-icons {
+            margin-top: 5px;
+        }
+        
+        .mood-icons img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>✿ 小明的个人空间 ✿</h1>
+            <marquee scrollamount="3" direction="left">欢迎来到我的留言板！请留下你的足迹~ <script>document.write(new Date().toLocaleDateString())</script></marquee>
+        </div>
+        
+        <div id="navigation">
+            <a href="index.html">首页</a> |
+            <a href="diary.html">日记</a> |
+            <a href="photos.html">相册</a> |
+            <a href="music.html">音乐</a> |
+            <a href="friends.html">好友</a> |
+            <a href="guestbook.html">留言板</a>
+        </div>
+        
+        <div id="content">
+            <h2>我的留言板 <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/guestbook.gif" alt="留言板" width="30"></h2>
+            
+            <div class="message-form">
+                <div class="form-title">请在这里留言: <span class="blink" style="font-size: 0.8em; color: #ff6699;">欢迎留言!</span></div>
+                <form action="#" method="post">
+                    <div class="form-row">
+                        <span class="form-label">昵称:</span>
+                        <input type="text" class="form-input" name="name" required>
+                    </div>
+                    <div class="form-row">
+                        <span class="form-label">QQ:</span>
+                        <input type="text" class="form-input" name="qq">
+                    </div>
+                    <div class="form-row">
+                        <span class="form-label">邮箱:</span>
+                        <input type="email" class="form-input" name="email">
+                    </div>
+                    <div class="form-row">
+                        <span class="form-label">心情:</span>
+                        <select class="form-input" name="mood">
+                            <option value="happy">开心</option>
+                            <option value="sad">伤心</option>
+                            <option value="excited">兴奋</option>
+                            <option value="angry">生气</option>
+                            <option value="normal" selected>平静</option>
+                        </select>
+                        <div class="mood-icons">
+                            <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/smile.gif" alt="开心">
+                            <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/sad.gif" alt="伤心">
+                            <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/excited.gif" alt="兴奋">
+                            <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/angry.gif" alt="生气">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <span class="form-label">留言内容:</span>
+                        <textarea class="form-textarea" name="content" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <span class="form-label">验证码:</span>
+                        <input type="text" class="form-input" style="width: 100px;" name="captcha" required>
+                        <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/captcha.jpg" alt="验证码" style="vertical-align: middle; margin-left: 10px; border: 1px solid #9999cc;">
+                    </div>
+                    <div class="form-row" style="text-align: center; margin-top: 15px;">
+                        <input type="submit" class="form-button" value="提交留言">
+                        <input type="reset" class="form-button" value="重置">
+                    </div>
+                </form>
+            </div>
+            
+            <div class="message-list">
+                <div class="message-item message-new">
+                    <div class="message-header">
+                        <img class="message-avatar" src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/avatar1.jpg" alt="小红">
+                        <div class="message-info">
+                            <div class="message-author">小红 <span class="blink" style="font-size: 0.8em; color: #ff6699;">NEW!</span></div>
+                            <div class="message-time">2023-07-18 14:30:25</div>
+                        </div>
+                    </div>
+                    <div class="message-content">
+                        <p>小明，你的博客做得真好看！我特别喜欢你分享的音乐，周杰伦的歌真的超级棒！</p>
+                        <p>对了，这周末有空一起去看电影吗？最近有一部新上映的科幻片据说很不错哦~</p>
+                    </div>
+                    <div class="message-footer">
+                        <a href="#">回复</a>
+                        <a href="#">私信</a>
+                        <a href="#">举报</a>
+                    </div>
+                </div>
+                
+                <div class="message-item">
+                    <div class="message-header">
+                        <img class="message-avatar" src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/avatar2.jpg" alt="阿强">
+                        <div class="message-info">
+                            <div class="message-author">阿强</div>
+                            <div class="message-time">2023-07-15 09:45:12</div>
+                        </div>
+                    </div>
+                    <div class="message-content">
+                        <p>兄弟，昨天的篮球赛真是太精彩了！虽然我们输了，但是玩得很开心。下次一定要赢回来！</p>
+                        <p>PS: 你新买的相机拍出来的照片真不错，有空教教我怎么拍照吧！</p>
+                    </div>
+                    <div class="message-reply">
+                        <span class="reply-author">小明回复:</span> 没问题，下次见面我带上相机，教你一些基本的拍摄技巧！篮球赛的事别灰心，我们下次一定能赢！
+                    </div>
+                    <div class="message-footer">
+                        <a href="#">回复</a>
+                        <a href="#">私信</a>
+                        <a href="#">举报</a>
+                    </div>
+                </div>
+                
+                <div class="message-item">
+                    <div class="message-header">
+                        <img class="message-avatar" src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/avatar3.jpg" alt="丽丽">
+                        <div class="message-info">
+                            <div class="message-author">丽丽</div>
+                            <div class="message-time">2023-07-10 18:20:36</div>
+                        </div>
+                    </div>
+                    <div class="message-content">
+                        <p>小明，我看了你推荐的《请回答1988》，真的超级感人！特别是德善和正焕的故事，看哭了好几次。</p>
+                        <p>谢谢你的推荐，这部剧真的很棒！有什么其他好看的剧可以推荐给我吗？</p>
+                    </div>
+                    <div class="message-reply">
+                        <span class="reply-author">小明回复:</span> 很高兴你喜欢这部剧！如果你喜欢这种风格，可以试试《请回答1997》和《机智的医生生活》，都是同一个导演的作品，风格相似，也很温暖治愈~
+                    </div>
+                    <div class="message-footer">
+                        <a href="#">回复</a>
+                        <a href="#">私信</a>
+                        <a href="#">举报</a>
+                    </div>
+                </div>
+                
+                <div class="message-item">
+                    <div class="message-header">
+                        <img class="message-avatar" src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/avatar4.jpg" alt="大壮">
+                        <div class="message-info">
+                            <div class="message-author">大壮</div>
+                            <div class="message-time">2023-07-05 21:15:48</div>
+                        </div>
+                    </div>
+                    <div class="message-content">
+                        <p>小明，你的相册里的照片拍得真不错！特别是那张海边日落的照片，构图很美。</p>
+                        <p>你用的是什么相机啊？我也想入手一台，但是不知道该选什么型号，能给点建议吗？</p>
+                    </div>
+                    <div class="message-reply">
+                        <span class="reply-author">小明回复:</span> 谢谢夸奖！我用的是佳能EOS 200D，是一款入门级的单反相机，操作简单，性价比很高。如果你是初学者，这款很适合。当然，如果预算充足，也可以考虑索尼的微单，体积更小巧。
+                    </div>
+                    <div class="message-footer">
+                        <a href="#">回复</a>
+                        <a href="#">私信</a>
+                        <a href="#">举报</a>
+                    </div>
+                </div>
+                
+                <div class="message-item">
+                    <div class="message-header">
+                        <img class="message-avatar" src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/avatar5.jpg" alt="小芳">
+                        <div class="message-info">
+                            <div class="message-author">小芳</div>
+                            <div class="message-time">2023-07-01 16:40:22</div>
+                        </div>
+                    </div>
+                    <div class="message-content">
+                        <p>小明，好久不见了！最近怎么样？听说你暑假要去海边玩，真羡慕啊！</p>
+                        <p>我这边在准备考试，忙得不可开交。希望考完试我们能一起出去玩~</p>
+                    </div>
+                    <div class="message-footer">
+                        <a href="#">回复</a>
+                        <a href="#">私信</a>
+                        <a href="#">举报</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <a href="#">&lt;&lt;</a>
+                <a href="#">&lt;</a>
+                <span class="current-page">1</span>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">&gt;</a>
+                <a href="#">&gt;&gt;</a>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px; border-top: 1px dashed #9999cc; padding-top: 10px;">
+                <p>感谢你的留言，我会尽快回复的！</p>
+                <p>已有 <b style="color: #ff6699;">125</b> 条留言</p>
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/thankyou.gif" alt="谢谢" width="100">
+            </div>
+        </div>
+        
+        <div id="footer">
+            <p>
+                小明的个人空间 &copy; 2023 版权所有 | 推荐使用IE6浏览器 1024x768分辨率浏览
+            </p>
+            <p>
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/ie_logo.gif" alt="IE" width="20">
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/netscape_logo.gif" alt="Netscape" width="20">
+                <img src="https://web.archive.org/web/20050301000000im_/http://www.geocities.com/images/html_valid.gif" alt="HTML Valid" width="20">
+            </p>
+        </div>
+    </div>
+</body>
+</html>
